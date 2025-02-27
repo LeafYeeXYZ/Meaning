@@ -51,7 +51,7 @@ export default function App() {
           {page === 'memo' && <Memo />}
           {page === 'config' && <Config />}
         </div>
-        <div className='w-full pt-2 pb-1 bg-gray-50 dark:bg-gray-900'>
+        <div className='w-full py-1 bg-gray-50 dark:bg-gray-900'>
           <TabBar
             activeKey={page}
             onChange={setPage}
