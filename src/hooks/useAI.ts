@@ -14,8 +14,9 @@ type AIState = {
 let timer: ReturnType<typeof setTimeout> | null = null
 const DELAY = 1000
 
-const defaultModel = localStorage.getItem('aiModel') ?? ''
-const defaultEndpoint = localStorage.getItem('aiEndpoint') ?? ''
+const defaultModel = localStorage.getItem('aiModel') ?? 'deepseek-chat'
+const defaultEndpoint =
+  localStorage.getItem('aiEndpoint') ?? 'https://api.deepseek.com/v1'
 const defaultApiKey = localStorage.getItem('aiApiKey') ?? ''
 
 async function getAI(

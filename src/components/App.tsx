@@ -6,7 +6,11 @@ import { LIGHT_THEME, DARK_THEME } from '../lib/theme.ts'
 import Chat from './Chat.tsx'
 import Config from './Config.tsx'
 import Memo from './Memo.tsx'
-import { CommentOutlined, BookOutlined, SettingOutlined } from '@ant-design/icons'
+import {
+  CommentOutlined,
+  BookOutlined,
+  SettingOutlined,
+} from '@ant-design/icons'
 
 export default function App() {
   // 全局状态
@@ -38,9 +42,21 @@ export default function App() {
   // 导航栏
   const [page, setPage] = useState<string>('chat')
   const tabs = [
-    { key: 'memo', icon: <BookOutlined style={{ fontSize: '1.3rem' }} />, title: '记忆' },
-    { key: 'chat', icon: <CommentOutlined style={{ fontSize: '1.3rem' }} />, title: '聊天' },
-    { key: 'config', icon: <SettingOutlined style={{ fontSize: '1.3rem' }} />, title: '设置' },
+    {
+      key: 'memo',
+      icon: <BookOutlined style={{ fontSize: '1.3rem' }} />,
+      title: '记忆',
+    },
+    {
+      key: 'chat',
+      icon: <CommentOutlined style={{ fontSize: '1.3rem' }} />,
+      title: '聊天',
+    },
+    {
+      key: 'config',
+      icon: <SettingOutlined style={{ fontSize: '1.3rem' }} />,
+      title: '设置',
+    },
   ]
 
   return (
@@ -52,16 +68,9 @@ export default function App() {
           {page === 'config' && <Config />}
         </div>
         <div className='w-full py-1 bg-gray-50 dark:bg-gray-900'>
-          <TabBar
-            activeKey={page}
-            onChange={setPage}
-          >
+          <TabBar activeKey={page} onChange={setPage}>
             {tabs.map((tab) => (
-              <TabBar.Item
-                key={tab.key}
-                icon={tab.icon}
-                title={tab.title}
-              />
+              <TabBar.Item key={tab.key} icon={tab.icon} title={tab.title} />
             ))}
           </TabBar>
         </div>
